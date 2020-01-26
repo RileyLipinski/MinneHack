@@ -45,8 +45,40 @@ app.get('/posts', (req,res) =>{
         dataToSend[row.UID] = postToAdd;
     }, () =>{
         res.type('json').send(dataToSend);
-    })
-})
+    });
+});
+
+app.get('/comments', (req, res) =>{
+    new Promise((resolve, reject) =>{
+        if(req.query.hasOwnProperty("postid") == false)
+        {
+            reject("needs query with postid");
+        }
+        else
+        {
+            console.log(req.query.postid);
+            var commentsToSend = {};
+            db.each("SELECT * FROM CommentsTable WHERE CommentPostID=?",[req.query.postid], (err, row) =>{
+                if(err)
+                {
+                    reject(err);
+                }
+                console.log(row);
+                var commentToAdd = {
+                    name: row.CommentName,
+                    content: row.CommentContent,
+                    postid: row.CommentPostID
+                }
+                console.log(commentToAdd);
+                commentsToSend[row.CommentUID] = commentToAdd;
+            }, () =>{
+                resolve(commentsToSend);
+            });
+        }
+    }).then((data) => {
+        res.type('json').send(data);
+    });
+});
 
 
 // app.get('/' , (req, res) => {
