@@ -1,13 +1,9 @@
 .title
 {
-    font-size: 3rem;
+    font-family: Georgia, sans-serif;
+    font-size: 5rem;
     position: relative;
     left: 6.5rem;
-}
-
-.reqtitle 
-{
-    font-size:3rem;
 }
 
 .others
@@ -19,5 +15,10 @@
 
 body
 {
-    background-color: lightseagreen;
+    background-color: lightgrey;
+}
+button
+{
+    width: 20rem;
+    height: 3rem;
 }
