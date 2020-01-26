@@ -33,7 +33,7 @@ var db = new sqlite3.Database(db_filename, sqlite3.OPEN_READWRITE, (err) => {
 app.get('/posts', (req,res) =>{
     var dataToSend = {};
     // var dbCallStart = "SELECT * FROM Table Help ORDER BY Date";
-    db.each("SELECT * FROM Table Help ORDER BY Date", (err,row) =>{
+    db.each("SELECT * FROM TableHelp ORDER BY Date", (err,row) =>{
         var postToAdd = {
             date: row.Date,
             time: row.Time,
