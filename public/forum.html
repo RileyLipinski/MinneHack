@@ -12,7 +12,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/forum.css">
 </head>
-<body>
+<body onload="start()">
     <div id = "app">
         <div class="container">
             <div class="row">
@@ -46,11 +46,11 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr v-for>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                      <tr v-for="(post,key) in formPostData">
+                        <th scope="row">{{ key }}</th>
+                        <td>{{ post.title }}</td>
+                        <td>{{ post.date }}</td>
+                        <td>{{ post.time }}</td>
                       </tr>
                     </tbody>
                   </table>
