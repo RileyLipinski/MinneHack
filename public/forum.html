@@ -1,81 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>Senior Solutions</title>
-    <!-- Vue -->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/forum.css">
-</head>
-<body onload="start()">
-    <div id = "app">
-        <div class="container">
-            <div class="row">
-                <div class = "col-sm-10 d-flex justify-content-center">
-                  <h2 class = "title">Forums</h2>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <title>Senior Solutions</title>
+        <!-- Vue -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/forum.css">
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script type="application/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script type="application/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    </head>
+    <body onload="start()">
+        <div id="app">
+            <div class="container">
+                <div class="row">
+                    <div class = "col-sm-10 d-flex justify-content-center">
+                        <h2 class = "title">Forums</h2>
+                    </div>
                 </div>
             </div>
+            
+            <div class="container">
+                <div class="row">
+                    <div class = "col d-flex justify-content-center mb-4 ml-3">
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-outline-dark ">About</button>
+                            <button type="button" class="btn btn-outline-dark ">Help</button>
+                            <button type="button" class="btn btn-outline-dark ">Support</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="row">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">UID</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="(post,key) in formPostData">
+                                <th scope="row">{{ key }}</th>
+                                <td>{{ post.title }}</td>
+                                <td>{{ post.date }}</td>
+                                <td>{{ post.time }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div> 
+            
+            
+            <!-- <div class="container">
+                <div class="row">
+                    <div class = "col-2">
+                        <h3 class= "reqtitle">title</h3>
+                    </div>
+                    <div class = "col-3 ">
+                        <h3 class = "others">neighborhood</h3>
+                    </div>
+                    <div class = "col-2 ">
+                        <h3 class = "others">date</h3>
+                    </div>
+                    <div class = "col-2 ">
+                        <h3 class = "others">time</h3>
+                    </div>
+                </div>
+            </div> -->
+            
         </div>
+        <script type="application/javascript" src="js/FrontEndJS.js"></script>
+    </body>
+    </html>
     
-        <div class="container">
-            <div class="row">
-                <div class = "col d-flex justify-content-center mb-4 ml-3">
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-outline-dark ">About</button>
-                        <button type="button" class="btn btn-outline-dark ">Help</button>
-                        <button type="button" class="btn btn-outline-dark ">Support</button>
-                      </div>
-                </div>
-            </div>
-        </div>
-    
-        <div class="container">
-            <div class="row">
-                <table class="table">
-                    <thead>
-                      <tr>
-                        <th scope="col">UID</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Date</th>
-                        <th scope="col">Time</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr v-for="(post,key) in formPostData">
-                        <th scope="row">{{ key }}</th>
-                        <td>{{ post.title }}</td>
-                        <td>{{ post.date }}</td>
-                        <td>{{ post.time }}</td>
-                      </tr>
-                    </tbody>
-                  </table>
-            </div>
-        </div> 
-        
-    
-        <!-- <div class="container">
-            <div class="row">
-                <div class = "col-2">
-                    <h3 class= "reqtitle">title</h3>
-                </div>
-                <div class = "col-3 ">
-                    <h3 class = "others">neighborhood</h3>
-                </div>
-                <div class = "col-2 ">
-                    <h3 class = "others">date</h3>
-                </div>
-                <div class = "col-2 ">
-                    <h3 class = "others">time</h3>
-                </div>
-            </div>
-        </div> -->
-    
-        <script src="/js/vuestuff.js"></script>
-    </div>
-</body>
-</html>

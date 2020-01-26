@@ -4,16 +4,16 @@ app = new Vue({
     data: {
         formPostData: [],
 
-    },
+    }
 });
 
 
 function start(){
     $.getJSON("http://localhost:8000/posts",processPosts);
-    // $.getJSON("http://localhost:8000/comments")  ADD comments URL
 }
 
 
+// $.getJSON("http://localhost:8000/comments")  ADD comments URL
 
 
 function processPosts(data){
