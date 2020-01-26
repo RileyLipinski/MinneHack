@@ -81,16 +81,6 @@ app.get('/comments', (req, res) =>{
 });
 
 
-// app.get('/' , (req, res) => {
-//     // ReadFile(path.join(public_dir, 'index.html')).then((template) => {  
-
-
-//     // WriteHtml(res, response);
-//     // })
-    
-//     res.sendFile(path.join(public_dir, 'index.html'));
-// });
-
 
 
 
