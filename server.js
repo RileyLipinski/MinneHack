@@ -47,3 +47,10 @@ function ReadFile(filename) {
         });
     });
 }
+
+
+
+
+
+console.log('Now listening on port ' + port);
+var server = app.listen(port);
