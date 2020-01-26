@@ -13,67 +13,69 @@
     <link rel="stylesheet" href="css/forum.css">
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class = "col-sm-10 d-flex justify-content-center">
-              <h2 class = "title">Forums</h2>
+    <div id = "app">
+        <div class="container">
+            <div class="row">
+                <div class = "col-sm-10 d-flex justify-content-center">
+                  <h2 class = "title">Forums</h2>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class = "col d-flex justify-content-center mb-4 ml-3">
-                <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-outline-dark ">About</button>
-                    <button type="button" class="btn btn-outline-dark ">Help</button>
-                    <button type="button" class="btn btn-outline-dark ">Support</button>
-                  </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">UID</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Time</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr v-for>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                </tbody>
-              </table>
-        </div>
-    </div> 
     
-
-    <!-- <div class="container">
-        <div class="row">
-            <div class = "col-2">
-                <h3 class= "reqtitle">title</h3>
-            </div>
-            <div class = "col-3 ">
-                <h3 class = "others">neighborhood</h3>
-            </div>
-            <div class = "col-2 ">
-                <h3 class = "others">date</h3>
-            </div>
-            <div class = "col-2 ">
-                <h3 class = "others">time</h3>
+        <div class="container">
+            <div class="row">
+                <div class = "col d-flex justify-content-center mb-4 ml-3">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-outline-dark ">About</button>
+                        <button type="button" class="btn btn-outline-dark ">Help</button>
+                        <button type="button" class="btn btn-outline-dark ">Support</button>
+                      </div>
+                </div>
             </div>
         </div>
-    </div> -->
-
-    <script src="/js/vuestuff.js"></script>
+    
+        <div class="container">
+            <div class="row">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">UID</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Time</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr v-for>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div> 
+        
+    
+        <!-- <div class="container">
+            <div class="row">
+                <div class = "col-2">
+                    <h3 class= "reqtitle">title</h3>
+                </div>
+                <div class = "col-3 ">
+                    <h3 class = "others">neighborhood</h3>
+                </div>
+                <div class = "col-2 ">
+                    <h3 class = "others">date</h3>
+                </div>
+                <div class = "col-2 ">
+                    <h3 class = "others">time</h3>
+                </div>
+            </div>
+        </div> -->
+    
+        <script src="/js/vuestuff.js"></script>
+    </div>
 </body>
 </html>
