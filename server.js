@@ -56,20 +56,17 @@ app.get('/comments', (req, res) =>{
         }
         else
         {
-            console.log(req.query.postid);
             var commentsToSend = {};
             db.each("SELECT * FROM CommentsTable WHERE CommentPostID=?",[req.query.postid], (err, row) =>{
                 if(err)
                 {
                     reject(err);
                 }
-                console.log(row);
                 var commentToAdd = {
                     name: row.CommentName,
                     content: row.CommentContent,
                     postid: row.CommentPostID
                 }
-                console.log(commentToAdd);
                 commentsToSend[row.CommentUID] = commentToAdd;
             }, () =>{
                 resolve(commentsToSend);
