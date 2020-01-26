@@ -18,7 +18,7 @@ var cors = require('cors');
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(cors());
-app.use(express.static(public_dir));
+// app.use(express.static(public_dir));
 
 
 var db = new sqlite3.Database(db_filename, sqlite3.OPEN_READWRITE, (err) => {
@@ -30,16 +30,34 @@ var db = new sqlite3.Database(db_filename, sqlite3.OPEN_READWRITE, (err) => {
     }
 });
 
+app.get('/posts', (req,res) =>{
+    var dataToSend = {};
+    // var dbCallStart = "SELECT * FROM Table Help ORDER BY Date";
+    db.each("SELECT * FROM Table Help ORDER BY Date", (err,row) =>{
+        var postToAdd = {
+            date: row.Date,
+            time: row.Time,
+            postCreatorName: row.PostCreatorName,
+            title: row.ProblemSubject,
+            postContent: row.PostContent,
+            commentIDs: row.CommentIDs
+        }
+        dataToSend[row.UID] = postToAdd;
+    }, () =>{
+        res.type('json').send(dataToSend);
+    })
+})
 
-app.get('/' , (req, res) => {
-    // ReadFile(path.join(public_dir, 'index.html')).then((template) => {  
+
+// app.get('/' , (req, res) => {
+//     // ReadFile(path.join(public_dir, 'index.html')).then((template) => {  
 
 
-    // WriteHtml(res, response);
-    // })
+//     // WriteHtml(res, response);
+//     // })
     
-    res.sendFile(path.join(public_dir, 'index.html'));
-});
+//     res.sendFile(path.join(public_dir, 'index.html'));
+// });
 
 
 
