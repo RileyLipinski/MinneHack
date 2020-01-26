@@ -1,2 +1,0 @@
-# MinneHack
-idk but yeah

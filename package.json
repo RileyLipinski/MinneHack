@@ -1,0 +1,37 @@
+{
+    "name": "MinneHack",
+    "version": "0.0.0",
+    "description": "h",
+    "author": {
+        "name": "",
+        "email": ""
+    },
+    "contributors": [
+        {
+            "name": "Jacob Jensen",
+            "email": "jacob@jacobj.org"
+        },
+        {
+            "name": "",
+            "email": ""
+        },
+        {
+            "name": "",
+            "email": ""
+        },
+        {
+            "name": "",
+            "email": ""
+        }
+    ],
+    "main": "server.js",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "sqlite3": "^4.1.0"
+    }
+}
